@@ -19,17 +19,17 @@
 
 ## items テーブル
 
-| Column              | Type       | Options                        |
-|---------------------|------------|--------------------------------|
-| name                | string     | null: false                    |
-| item_explanation    | text       | null: false                    |
-| item_category       | integer    | null: false                    |
-| item_condition      | integer    | null: false                    |
-| delivery_fee_status | integer    | null: false                    |
-| shipping_prefecture | integer    | null: false                    |
-| preparation_day     | integer    | null: false                    |
-| price               | integer    | null: false                    |
-| user                | references | null: false, foreign_key: true |
+| Column                 | Type       | Options                        |
+|------------------------|------------|--------------------------------|
+| name                   | string     | null: false                    |
+| item_explanation       | text       | null: false                    |
+| item_category_id       | integer    | null: false                    |
+| item_condition_id      | integer    | null: false                    |
+| delivery_fee_status_id | integer    | null: false                    |
+| shipping_prefecture_id | integer    | null: false                    |
+| preparation_day_id     | integer    | null: false                    |
+| price                  | integer    | null: false                    |
+| user                   | references | null: false, foreign_key: true |
 
 
 ### Association
@@ -53,14 +53,16 @@
 
 ## delivery_addresses テーブル
 
-| Column                 | Type    | Options                        |
-|------------------------|---------|--------------------------------|
-| postal_code            | string  | null: false                    |
-| delivery_prefecture_id | integer | null: false                    |
-| municipality           | string  | null: false, foreign_key: true |
-| house_number           | string  | null: false, foreign_key: true |
-| building               | string  | foreign_key: true              |
-| phone_number           | string  | null: false, foreign_key: true |
+| Column                 | Type       | Options                        |
+|------------------------|------------|--------------------------------|
+| postal_code            | string     | null: false                    |
+| delivery_prefecture_id | integer    | null: false                    |
+| municipality           | string     | null: false                    |
+| house_number           | string     | null: false                    |
+| building               | string     |                                |
+| phone_number           | string     | null: false                    |
+| user                   | references | null: false, foreign_key: true |
+| item                   | references | null: false, foreign_key: true |
 
 
 ### Association
