@@ -6,8 +6,8 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :preparationday
   with_options presence: true do
-    validates :image
     validates :name
+    validates :image
     validates :item_explanation
     validates :item_category_id,       numericality: { other_than: 1 }
     validates :item_condition_id,      numericality: { other_than: 1 }
