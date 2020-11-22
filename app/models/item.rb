@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :preparationday
   with_options presence: true do
+    validates :image
     validates :name
     validates :item_explanation
     validates :item_category_id,       numericality: { other_than: 1 }
@@ -13,7 +14,7 @@ class Item < ApplicationRecord
     validates :delivery_fee_status_id, numericality: { other_than: 1 }
     validates :shipping_prefecture_id, numericality: { other_than: 1 }
     validates :preparation_day_id,     numericality: { other_than: 1 }
-    validates :price
+    validates :price,                  numericality: { greater_than: 300, less_than: 9999999 }, format: { with: /\A[0-9]+\z/ }
     validates :user
   end
 end
