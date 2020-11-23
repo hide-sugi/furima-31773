@@ -11,12 +11,11 @@ class Item < ApplicationRecord
     validates :name
     validates :image
     validates :item_explanation
-    validates :item_category_id,       numericality: { other_than: 1 }
-    validates :item_condition_id,      numericality: { other_than: 1 }
-    validates :delivery_fee_status_id, numericality: { other_than: 1 }
-    validates :shipping_prefecture_id, numericality: { other_than: 1 }
-    validates :preparation_day_id,     numericality: { other_than: 1 }
-    validates :price,                  numericality: { greater_than: 300, less_than: 9999999 }, format: { with: /\A[0-9]+\z/ }
-    
+    validates :item_category_id,       numericality: { other_than: 0 }
+    validates :item_condition_id,      numericality: { other_than: 0 }
+    validates :delivery_fee_status_id, numericality: { other_than: 0 }
+    validates :shipping_prefecture_id, numericality: { other_than: 0 }
+    validates :preparation_day_id,     numericality: { other_than: 0 }
+    validates :price,                  numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }, format: { with: /\A[0-9]+\z/ }
   end
 end
