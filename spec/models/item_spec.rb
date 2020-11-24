@@ -29,30 +29,30 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Item explanation can't be blank")
       end
-      it "item_category_idが空だと出品できない" do
-        @item.item_category_id = nil
+      it "item_category_idが0だと出品できない" do
+        @item.item_category_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item category can't be blank")
+        expect(@item.errors.full_messages).to include("Item category must be other than 0")
       end
-      it "item_condition_idが空だと出品できない" do
-        @item.item_condition_id = nil
+      it "item_condition_idが0だと出品できない" do
+        @item.item_condition_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item condition can't be blank")
+        expect(@item.errors.full_messages).to include("Item condition must be other than 0")
       end
-      it "delivery_fee_status_idが空だと出品できない" do
-        @item.delivery_fee_status_id = nil
+      it "delivery_fee_status_idが0だと出品できない" do
+        @item.delivery_fee_status_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery fee status can't be blank")
+        expect(@item.errors.full_messages).to include("Delivery fee status must be other than 0")
       end
-      it "shipping_prefecture_idが空だと出品できない" do
-        @item.shipping_prefecture_id = nil
+      it "shipping_prefecture_idが0だと出品できない" do
+        @item.shipping_prefecture_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping prefecture is not a number")
+        expect(@item.errors.full_messages).to include("Shipping prefecture must be other than 0")
       end
-      it "preparation_day_idが空だと出品できない" do
-        @item.preparation_day_id = nil
+      it "preparation_day_idが0だと出品できない" do
+        @item.preparation_day_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Preparation day is not a number")
+        expect(@item.errors.full_messages).to include("Preparation day must be other than 0")
       end
       it "priceが空だと出品できない" do
         @item.price = nil
