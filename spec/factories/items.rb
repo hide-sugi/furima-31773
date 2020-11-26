@@ -4,7 +4,7 @@ FactoryBot.define do
     item_explanation       { "使いやすい最高の商品です" }
     category_id            { 1 }
     condition_id           { 1 }
-    deliveryfeestatus_id   { 1 }
+    deliverystatus_id      { 1 }
     shippingprefecture_id  { 1 }
     preparationday_id      { 1 }
     price                  { 300 }
