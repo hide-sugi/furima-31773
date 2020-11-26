@@ -29,30 +29,30 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Item explanation can't be blank")
       end
-      it "item_category_idが0だと出品できない" do
-        @item.item_category_id = 0
+      it "category_idが0だと出品できない" do
+        @item.category_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item category must be other than 0")
+        expect(@item.errors.full_messages).to include("Category must be other than 0")
       end
-      it "item_condition_idが0だと出品できない" do
-        @item.item_condition_id = 0
+      it "condition_idが0だと出品できない" do
+        @item.condition_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item condition must be other than 0")
+        expect(@item.errors.full_messages).to include("Condition must be other than 0")
       end
-      it "delivery_fee_status_idが0だと出品できない" do
-        @item.delivery_fee_status_id = 0
+      it "deliverystatus_idが0だと出品できない" do
+        @item.deliverystatus_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery fee status must be other than 0")
+        expect(@item.errors.full_messages).to include("Delivery status must be other than 0")
       end
-      it "shipping_prefecture_idが0だと出品できない" do
-        @item.shipping_prefecture_id = 0
+      it "shippingprefecture_idが0だと出品できない" do
+        @item.shippingprefecture_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping prefecture must be other than 0")
       end
       it "preparation_day_idが0だと出品できない" do
         @item.preparation_day_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Preparation day must be other than 0")
+        expect(@item.errors.full_messages).to include("Preparationday must be other than 0")
       end
       it "priceが空だと出品できない" do
         @item.price = nil
