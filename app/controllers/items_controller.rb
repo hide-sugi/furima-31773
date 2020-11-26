@@ -34,7 +34,5 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :image, :item_explanation, :category_id, :condition_id, :deliverystatus_id, :shippingprefecture_id, :preparationday_id, :price).merge(user_id: current_user.id)
   end
-# end
+end
 
-# ①再起動
-# ②ターミナルで　git add . → git commit -m “test” → git push heroic master
