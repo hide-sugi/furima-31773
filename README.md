@@ -25,7 +25,7 @@
 | item_explanation       | text       | null: false                    |
 | category_id            | integer    | null: false                    |
 | condition_id           | integer    | null: false                    |
-| deliverystatus_id   | integer    | null: false                    |
+| deliverystatus_id      | integer    | null: false                    |
 | shippingprefecture_id  | integer    | null: false                    |
 | preparationday_id      | integer    | null: false                    |
 | price                  | integer    | null: false                    |
