@@ -48,10 +48,10 @@
 ### Association
 - belongs_to :item
 - belongs_to :user
-- has_one :delivery_address
+- has_one :address
 
 
-## delivery_addresses テーブル
+## Addresses テーブル
 
 | Column                 | Type       | Options                        |
 |------------------------|------------|--------------------------------|
