@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :preparationday
   has_one_attached :image
   belongs_to :user
-  has_one :purchase
+  has_one :order
 
   with_options presence: true do
     validates :name
