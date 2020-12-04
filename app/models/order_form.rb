@@ -9,6 +9,7 @@ class OrderForm
     validates :house_number
     validates :phone_number,          format: { with: /\A\d{11}\z/ }
     validates :item_id
+    validates :token
   end
 
   def save
