@@ -38,7 +38,7 @@ RSpec.describe OrderForm, type: :model do
       it 'deliveryprefecture_idが未選択だと購入できない' do
         @order_form.deliveryprefecture_id = '0'
         @order_form.valid?
-        expect(@order_form.errors.full_messages).to include("Deliveryprefecture is not a number")
+        expect(@order_form.errors.full_messages).to include("Deliveryprefecture must be other than 0")
       end
       it 'municipalityが空だと購入できない' do
         @order_form.municipality = ''
