@@ -52,5 +52,4 @@ class Deliveryprefecture < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :orders
-  
 end
