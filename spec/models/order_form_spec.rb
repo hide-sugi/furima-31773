@@ -13,6 +13,10 @@ RSpec.describe OrderForm, type: :model do
       it 'postal_codeとdeliveryprefecture_idとmunicipalityとhouse_numberとphone_numberとtokenがあれば購入できる' do
         expect(@order_form).to be_valid
       end
+      it 'buildingが空でも購入できる' do
+        @order_form.building = ''
+        expect(@order_form).to be_valid
+      end
     end
 
     context '商品の購入がうまくいかないとき' do
@@ -30,6 +34,11 @@ RSpec.describe OrderForm, type: :model do
         @order_form.deliveryprefecture_id = ''
         @order_form.valid?
         expect(@order_form.errors.full_messages).to include("Deliveryprefecture can't be blank")
+      end
+      it 'deliveryprefecture_idが未選択だと購入できない' do
+        @order_form.deliveryprefecture_id = '0'
+        @order_form.valid?
+        expect(@order_form.errors.full_messages).to include("Deliveryprefecture is not a number")
       end
       it 'municipalityが空だと購入できない' do
         @order_form.municipality = ''
