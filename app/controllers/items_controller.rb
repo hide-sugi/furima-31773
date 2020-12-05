@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item, except: [:index, :new, :create]
   before_action :contributor_confirmation, only: [:edit, :update, :destroy]
   def index
-    @items = Item.all.order("created_at DESC")
+    @items = Item.all.order('created_at DESC')
   end
 
   def new
@@ -35,8 +35,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-     @item.destroy
-     redirect_to root_path
+    @item.destroy
+    redirect_to root_path
   end
 
   private
@@ -53,4 +53,3 @@ class ItemsController < ApplicationController
     redirect_to root_path unless current_user == @item.user
   end
 end
-

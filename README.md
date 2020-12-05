@@ -14,7 +14,7 @@
 
 ### Association
 - has_many :items
-- has_many :purchases
+- has_many :orders
 
 
 ## items テーブル
@@ -34,10 +34,10 @@
 
 ### Association
 - belongs_to :user
-- has_one :purchase
+- has_one :order
 
 
-## purchases テーブル
+## orders テーブル
 
 | Column              | Type       | Options                        |
 |---------------------|------------|--------------------------------|
@@ -48,21 +48,21 @@
 ### Association
 - belongs_to :item
 - belongs_to :user
-- has_one :delivery_address
+- has_one :address
 
 
-## delivery_addresses テーブル
+## Addresses テーブル
 
 | Column                 | Type       | Options                        |
 |------------------------|------------|--------------------------------|
 | postal_code            | string     | null: false                    |
-| delivery_prefecture_id | integer    | null: false                    |
+| deliveryprefecture_id  | integer    | null: false                    |
 | municipality           | string     | null: false                    |
 | house_number           | string     | null: false                    |
 | building               | string     |                                |
 | phone_number           | string     | null: false                    |
-| purchase_record        | references | null: false, foreign_key: true |
+| order                  | references | null: false, foreign_key: true |
 
 
 ### Association
-- belongs_to :purchase
+- belongs_to :order
