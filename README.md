@@ -14,7 +14,7 @@
 
 ### Association
 - has_many :items
-- has_many :purchase_records
+- has_many :orders
 
 
 ## items テーブル
@@ -23,21 +23,21 @@
 |------------------------|------------|--------------------------------|
 | name                   | string     | null: false                    |
 | item_explanation       | text       | null: false                    |
-| item_category_id       | integer    | null: false                    |
-| item_condition_id      | integer    | null: false                    |
-| delivery_fee_status_id | integer    | null: false                    |
-| shipping_prefecture_id | integer    | null: false                    |
-| preparation_day_id     | integer    | null: false                    |
+| category_id            | integer    | null: false                    |
+| condition_id           | integer    | null: false                    |
+| deliverystatus_id      | integer    | null: false                    |
+| shippingprefecture_id  | integer    | null: false                    |
+| preparationday_id      | integer    | null: false                    |
 | price                  | integer    | null: false                    |
 | user                   | references | null: false, foreign_key: true |
 
 
 ### Association
 - belongs_to :user
-- has_one :purchase_record
+- has_one :order
 
 
-## purchase_records テーブル
+## orders テーブル
 
 | Column              | Type       | Options                        |
 |---------------------|------------|--------------------------------|
@@ -48,21 +48,21 @@
 ### Association
 - belongs_to :item
 - belongs_to :user
-- has_one :delivery_address
+- has_one :address
 
 
-## delivery_addresses テーブル
+## addresses テーブル
 
 | Column                 | Type       | Options                        |
 |------------------------|------------|--------------------------------|
 | postal_code            | string     | null: false                    |
-| delivery_prefecture_id | integer    | null: false                    |
+| deliveryprefecture_id  | integer    | null: false                    |
 | municipality           | string     | null: false                    |
 | house_number           | string     | null: false                    |
 | building               | string     |                                |
 | phone_number           | string     | null: false                    |
-| purchase_record        | references | null: false, foreign_key: true |
+| order                  | references | null: false, foreign_key: true |
 
 
 ### Association
-- belongs_to :purchase_record
+- belongs_to :order
