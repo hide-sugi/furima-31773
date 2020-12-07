@@ -4,7 +4,7 @@ class OrderForm
 
   with_options presence: true do
     validates :postal_code,           format: { with: /\A\d{3}-\d{4}\z/ }
-    validates :deliveryprefecture_id, numericality: { other_than: 0 }
+    validates :deliveryprefecture_id, numericality: { other_than: 0, message: "は---以外の値を入力してください" }
     validates :municipality
     validates :house_number
     validates :phone_number, format: { with: /\A\d{11}\z/ }
